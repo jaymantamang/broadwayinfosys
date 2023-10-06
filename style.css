@@ -1,0 +1,524 @@
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: whitesmoke;
+    color: black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: #222;
+    grid-template-areas:
+        "top top top top top top top top top top top top"
+        "middle middle middle middle middle middle middle middle middle middle middle middle"
+        "bottom bottom bottom bottom bottom bottom bottom bottom bottom bottom bottom bottom";
+}
+
+
+.top {
+    grid-area: top;
+    background: linear-gradient(to left, #f09122 20%, #c4213a 80%);
+    color: white;
+    padding: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.button {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 45px 8px 10px;
+    font-size: 13px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.button svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: inline;
+    transition: all 0.6s ease;
+}
+
+
+
+.middle {
+    grid-area: middle;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+    justify-content: left;
+}
+
+.middle-item {
+    background-color: whitesmoke;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.logo {
+    display: block;
+    width: 300px;
+    margin-left: 60px;
+}
+
+.form {
+    --timing: 0.3s;
+    --width-of-input: 300px;
+    --height-of-input: 40px;
+    --border-height: 2px;
+    --input-bg: white;
+    --border-radius: 30px;
+    --after-border-radius: 1px;
+    position: relative;
+    width: var(--width-of-input);
+    height: var(--height-of-input);
+    display: flex;
+    align-items: center;
+    padding-inline: 0.8em;
+    border-radius: var(--border-radius);
+    transition: border-radius 0.5s ease;
+    background: var(--input-bg, whitesmoke);
+}
+
+/* styling of Input */
+.input {
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+}
+
+/* styling of animated border */
+.form:before {
+    content: "";
+    position: absolute;
+    background: var(--border-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: var(--border-height);
+    left: 0;
+    bottom: 0;
+    border-radius: 1px;
+    transition: transform var(--timing) ease;
+}
+
+/* Hover on Input */
+.form:focus-within {
+    border-radius: var(--after-border-radius);
+}
+
+input:focus {
+    outline: none;
+}
+
+/* here is code of animated border */
+.form:focus-within:before {
+    transform: scale(1);
+}
+
+/* styling of close button */
+/* == you can click the close button to remove text == */
+.reset {
+    border: none;
+    background: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* close button shown when typing */
+input:not(:placeholder-shown)~.reset {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* sizing svg icons */
+.form svg {
+    width: 17px;
+    margin-top: 3px;
+    background-color: whitesmoke;
+}
+
+a {
+    color: whitesmokew;
+    text-decoration: none;
+}
+
+.p-menu1 {
+    height: 100%;
+}
+
+.tel {
+    position: static;
+    color: #2d2d2d;
+    padding-top: 1px;
+    font-size: 1.2rem;
+}
+
+.button1 {
+    display: inline;
+    background-color: #123198;
+    color: #fff;
+    padding: 15px 45px 15px 25px;
+    font-size: 19px;
+    margin-left: 50px;
+    border-radius: 10px;
+}
+
+.button1 svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: inline;
+    transition: all 0.6s ease;
+}
+
+
+
+.bottom {
+    grid-area: bottom;
+    background-color: whitesmoke;
+
+}
+
+.navbar {
+    border-top: 1px solid #eaeaea;
+    margin-top: 15px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 120px;
+    border: 0.1px solid;
+    border-color: #2d2d2d;
+}
+
+nav a {
+    color: black;
+    font-size: 1.5rem;
+}
+
+
+.main {
+    margin: 0px 5px 15px;
+}
+
+.item {
+    display: grid;
+    grid-column: span 9;
+    background-color: #274595;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+}
+
+.subitem {
+    display: grid;
+    grid-column: 10/ span3;
+    text-decoration: none;
+
+}
+
+.subitem1 {
+    background-color: #2970DB;
+    height: 250px;
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px;
+}
+
+.subitem2 {
+    background-color: #80E8E6;
+    height: 250px;
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 1.5rem;
+    color: #274595;
+    padding: 10px;
+}
+
+.left-div {
+
+    margin-top: 50px;
+}
+
+.h1 {
+    color: white;
+    padding: 40px;
+    font-size: 3.5rem;
+    font-family: libre baskerville, serif;
+    font-weight: 700;
+    margin-top: 60px;
+    display: inline;
+}
+
+.h2 {
+    display: inline;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    padding-left: 40px;
+    font-family: libre baskerville, serif;
+    /* margin-top: 10px; */
+}
+
+.p {
+    display: inline;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    font-family: libre baskerville, serif;
+    line-height: 30px;
+    padding-left: 40px;
+    text-align: justify;
+}
+
+.admission-button {
+    background-color: #74BDDF;
+    color: #274595;
+    padding: 8px 50px 8px 10px;
+    font-size: 20px;
+    margin-left: 40px;
+    border-radius: 10px;
+    width: 300px;
+    height: 60px;
+    margin-top: 100px;
+    font-weight: 300;
+}
+
+.admission-button svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: inline;
+    transition: all 0.6s ease;
+}
+
+.subitem1-img {
+    margin-top: 30px;
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+}
+
+.subitem1-text {
+    color: white;
+    margin-left: 15px;
+    font-size: 2.5rem;
+}
+
+.subitem2-text {
+    color: white;
+    margin-left: 15px;
+    font-size: 2.5rem;
+    color: #274595;
+}
+
+main h3 {
+    grid-column: span 12;
+    text-align: left;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    color: #EC6703;
+    padding-left: 100px;
+    margin-top: 100px;
+
+}
+
+main .card {
+    text-align: center;
+    grid-column: span 3;
+    background-color: whitesmoke;
+    padding: 10px 20px;
+    justify-content: space-evenly;
+
+}
+
+.card-img {
+    border-radius: 5px;
+    width: 320px;
+    height: 200px;
+}
+
+
+main h4 {
+    color: black;
+}
+
+.main-p {
+
+    font-size: 16px;
+    color: black;
+    font-weight: 200;
+}
+
+.popular-courses {
+    grid-column: span 12;
+    text-align: center;
+}
+
+.main-button {
+    display: inline;
+    background-color: white;
+    color: blue;
+    padding: 15px 45px 15px 25px;
+    font-size: 19px;
+    margin-left: 50px;
+    border-radius: 5px;
+    width: 350px;
+    height: 50px;
+
+}
+
+.main-button svg {
+    width: 20px;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: inline;
+    transition: all 0.6s ease;
+}
+
+.course-status {
+    grid-column: span 12;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 50px;
+    font-family: libre baskerville;
+    font-weight: 700;
+
+}
+
+.coursecard {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    border-radius: 5px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.coursecard1 {
+    border-radius: 10px;
+    width: 291px;
+    height: 223px;
+    background-color: #122C90;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.coursecard2 {
+    border-radius: 10px;
+    width: 291px;
+    height: 223px;
+    background-color: #EC6703;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.coursecard3 {
+    border-radius: 10px;
+    width: 291px;
+    height: 223px;
+    background-color: #F0CC3D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.coursecount {
+    font-size: 50px;
+    color: #fff;
+    font-weight: bolder;
+    font-family: source sans pro, helvetica neue light, helvetica neue, helvetica, arial, sans-serif;
+    margin: 0px;
+}
+
+.coursecount1 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 150;
+    font-family: source sans pro, helvetica neue light, helvetica neue, helvetica, arial, sans-serif;
+    margin: 0px;
+}
+
+.container {
+    display: grid;
+    grid-column: span 12;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: #d5e6ff;
+
+
+}
+
+.heading-sub {
+    line-height: 25px;
+    font-family: libre baskerville, serif;
+
+}
+
+.headingsup.color {
+    color: #2d2d2d;
+}
+
+
+.footer-main {
+    background-color: #f8f8f8;
+    border: solid 1px #333;
+    padding: 60px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+    margin: 0 auto;
+    max-width: 100%;
+    grid-column: span 3;
+    background-color: whitesmoke;
+    padding: 10px 20px;
+    justify-content: space-evenly;
+    display: flex;
+    background-color: #223588;
+    color: white;
+}
+
+footer ul {
+
+    list-style-type: none;
+    line-height: 35px;
+    font-size: 15px;
+}
+
+footer h3 {
+    margin-left: 35px;
+}
